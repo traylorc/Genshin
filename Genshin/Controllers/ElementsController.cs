@@ -22,14 +22,14 @@ namespace Genshin.Controllers
 
         // GET: api/Elements
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Elements>>> GetElements()
+        public async Task<ActionResult<IEnumerable<Element>>> GetElements()
         {
             return await _context.Elements.ToListAsync();
         }
 
         // GET: api/Elements/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Elements>> GetElements(int id)
+        public async Task<ActionResult<Element>> GetElements(int id)
         {
             var elements = await _context.Elements.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace Genshin.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutElements(int id, Elements elements)
+        public async Task<IActionResult> PutElements(int id, Element elements)
         {
             if (id != elements.Id)
             {
@@ -77,7 +77,7 @@ namespace Genshin.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Elements>> PostElements(Elements elements)
+        public async Task<ActionResult<Element>> PostElements(Element elements)
         {
             _context.Elements.Add(elements);
             await _context.SaveChangesAsync();
@@ -87,7 +87,7 @@ namespace Genshin.Controllers
 
         // DELETE: api/Elements/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Elements>> DeleteElements(int id)
+        public async Task<ActionResult<Element>> DeleteElements(int id)
         {
             var elements = await _context.Elements.FindAsync(id);
             if (elements == null)

@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace Genshin.Models
 {
-    public class Elements
+    public class Element
     {
 
         public int Id { get; set; }
+
         [Required, StringLength(30)]
-        public string Element { get; set; }
+        public string Name { get; set; }
 
 
 
-
-
-
-
-        public Elements() { }
+        public Element() { }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Genshin.Models
 {
-    public class Weapons
+    public class Weapon
     {
 
         public int Id { get; set; }
@@ -14,7 +14,7 @@ namespace Genshin.Models
         public string WeaponType { get; set; }
 
 
-        public Weapons()
+        public Weapon()
         {
 
         }

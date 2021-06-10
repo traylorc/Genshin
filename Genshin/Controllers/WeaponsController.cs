@@ -22,14 +22,14 @@ namespace Genshin.Controllers
 
         // GET: api/Weapons
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Weapons>>> GetWeapon()
+        public async Task<ActionResult<IEnumerable<Weapon>>> GetWeapon()
         {
             return await _context.Weapons.ToListAsync();
         }
 
         // GET: api/Weapons/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Weapons>> GetWeapon(int id)
+        public async Task<ActionResult<Weapon>> GetWeapon(int id)
         {
             var weapon = await _context.Weapons.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace Genshin.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutWeapon(int id, Weapons weapon)
+        public async Task<IActionResult> PutWeapon(int id, Weapon weapon)
         {
             if (id != weapon.Id)
             {
@@ -77,7 +77,7 @@ namespace Genshin.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Weapons>> PostWeapon(Weapons weapon)
+        public async Task<ActionResult<Weapon>> PostWeapon(Weapon weapon)
         {
             _context.Weapons.Add(weapon);
             await _context.SaveChangesAsync();
@@ -87,7 +87,7 @@ namespace Genshin.Controllers
 
         // DELETE: api/Weapons/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Weapons>> DeleteWeapon(int id)
+        public async Task<ActionResult<Weapon>> DeleteWeapon(int id)
         {
             var weapon = await _context.Weapons.FindAsync(id);
             if (weapon == null)
