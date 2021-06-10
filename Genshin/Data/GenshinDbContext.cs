@@ -12,5 +12,6 @@ using Genshin.Models;
         {
         }
 
-        public DbSet<Genshin.Models.Weapon> Weapons { get; set; }
-    }
+        public DbSet<Genshin.Models.Weapons> Weapons { get; set; }
+    public DbSet<Genshin.Models.Elements> Elements { get; set; }
+}
